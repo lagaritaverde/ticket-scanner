@@ -9,7 +9,10 @@ function App() {
 				alt='logo'
 				width='400px'
 			/>
-			<p>La garita verde coming soon..</p>
+			<p>Ticket Scanner coming soon..</p>
+			<small style={{ fontSize: '18px', fontStyle: 'italic' }}>
+				from La Garita Verde
+			</small>
 		</div>
 	)
 }
