@@ -9,3 +9,11 @@ body {
 	margin: 0;
 	max-height: 100dvh;
 }
+
+a {
+	text-decoration: none;
+}
+
+a:any-link {
+	color: var(--color-text);
+}
