@@ -1,6 +1,7 @@
 {
 	"name": "ticket-scanner-ui",
 	"private": true,
+	"homepage": "https://lagaritaverde.github.io/ticket-scanner-ui/",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
