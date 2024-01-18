@@ -1,18 +1,19 @@
-import blackLogo from './assets/lagaritaverde-logo-sintypo.png'
+import blackLogo from './assets/lagaritaverde-logo-sintypo-trans.png'
 import styles from './app.module.css'
 
 function App() {
 	return (
 		<div className={styles.container}>
 			<img
+				className={styles.landingLogo}
 				src={blackLogo}
 				alt='logo'
-				width='400px'
 			/>
-			<p>Ticket Scanner coming soon..</p>
-			<small style={{ fontSize: '18px', fontStyle: 'italic' }}>
-				by La Garita Verde
-			</small>
+			<p className={styles.headline}>
+				<strong className={styles.highlight}>Ticket Scanner</strong> coming
+				soon..
+			</p>
+			<small className={styles.register}>by La Garita Verde</small>
 		</div>
 	)
 }

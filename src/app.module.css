@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500&display=swap');
 
-:root {
-	--color-text: #2aa048;
-}
-
 body {
 	padding: 0;
 	margin: 0;
@@ -12,8 +8,8 @@ body {
 .container {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
-	font-size: 40px;
-	background-color: black;
+	padding: 3rem;
+	background-color: var(--color-mainbackground);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -21,4 +17,53 @@ body {
 	align-content: center;
 	color: var(--color-text);
 	height: 100dvh;
+	text-align: center;
+}
+
+.landingLogo {
+	width: 400px;
+}
+
+.headline {
+	font-size: 2.5rem;
+}
+.register {
+	font-size: 1.3rem;
+}
+.highlight {
+	color: var(--color-text2);
+}
+
+@media (width <= 620px) {
+	.container {
+		width: auto;
+	}
+
+	.landingLogo {
+		width: 250px;
+	}
+
+	.headline {
+		font-size: 2.1rem;
+	}
+	.register {
+		font-size: 1rem;
+	}
+}
+
+@media (width <= 420px) {
+	.container {
+		width: auto;
+	}
+
+	.landingLogo {
+		width: 100px;
+	}
+
+	.headline {
+		font-size: 1.7rem;
+	}
+	.register {
+		font-size: 0.7rem;
+	}
 }
