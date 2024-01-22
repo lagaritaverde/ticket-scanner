@@ -81,6 +81,7 @@ services:
     environment:
       ConnectionStrings__database: "Server=db;Port=5432;Database=tickets;User Id=tickets;Password=password;"
       ConnectionStrings__eventstore: "esdb://eventstore:2113?tls=false&keepAliveTimeout=10000&keepAliveInterval=10000"
+    restart: on-failure
 
 networks:
   backend:
