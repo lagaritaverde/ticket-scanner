@@ -1,4 +1,4 @@
-import blackLogo from './assets/lagaritaverde-logo-sintypo-trans.png'
+import blackLogo from './assets/lgv-logo-horizontal-trans.svg'
 import styles from './app.module.css'
 
 function App() {
@@ -11,13 +11,11 @@ function App() {
 					alt='logo'
 				/>
 			</a>
+			<small className={styles.register}>A game development company</small>
 			<p className={styles.headline}>
-				<strong className={styles.highlight}>Ticket Scanner</strong> coming
+				<strong className={styles.highlight}>Ticket Scanner app</strong> coming
 				soon..
 			</p>
-			<small className={styles.register}>
-				by <a href='http://lagaritaverde.com'>La Garita Verde</a>
-			</small>
 		</div>
 	)
 }
