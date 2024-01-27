@@ -13,7 +13,6 @@ services:
     volumes:
 #      - ./SQL/:/docker-entrypoint-initdb.d/
       - ./docker/postgres/data:/var/lib/postgresql/data
-
     networks:
       - backend
 
@@ -64,7 +63,7 @@ services:
       - '8081:8080'
     networks:
       - backend
-      
+      #https://andrewlock.net/5-ways-to-set-the-urls-for-an-aspnetcore-app/
   auth:
     container_name: auth
     image: homeauth
@@ -73,6 +72,9 @@ services:
         dockerfile: Home.Auth/Dockerfile
     ports:
       - '8082:8080'
+#    environment:
+#      - ASPNETCORE_URLS=http://*:8080/api/auth/
+#      - ASPNETCORE_HTTP_PORTS=8080
     networks:
       - backend
 
@@ -93,6 +95,24 @@ services:
       ConnectionStrings__database: "Server=db;Port=5432;Database=tickets;User Id=tickets;Password=password;"
       ConnectionStrings__eventstore: "esdb://eventstore:2113?tls=false&keepAliveTimeout=10000&keepAliveInterval=10000"
       auth__url: "http://auth:8080/"
+    restart: on-failure
+
+  web:
+    container_name: tickets-web
+    image: nginx
+    depends_on:
+      - category
+    ports:
+      - '80:81'
+    environment:
+      POSTGRES_USER: tickets
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tickets
+    volumes:
+      - ./dist/:/usr/share/nginx/html/
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    networks:
+      - backend
     restart: on-failure
 
 networks:
