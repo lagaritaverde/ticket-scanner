@@ -11,7 +11,7 @@ function App() {
 					alt='logo'
 				/>
 			</a>
-			<small className={styles.register}>A game development company</small>
+			<small className={styles.register}>A software development company</small>
 			<p className={styles.headline}>
 				<strong className={styles.highlight}>Ticket Scanner app</strong> coming
 				soon..
